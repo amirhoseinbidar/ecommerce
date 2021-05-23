@@ -156,3 +156,5 @@ Thumbs.db
 .idea
 .vscode
 .env
+
+static_cdn/
