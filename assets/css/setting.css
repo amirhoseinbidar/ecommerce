@@ -1,0 +1,25 @@
+
+.container-title {
+    text-align: end;
+    margin: 25px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.field-margin {
+    margin: 25px;
+}
+
+.text-margin {
+    margin-left: 10px;
+}
+
+.field-row {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+}
+
+.field-row > input {
+    flex: 1; 
+}

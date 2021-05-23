@@ -1,0 +1,140 @@
+.margin-template { 
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.header-container{
+    margin-top: 130px;
+}
+
+.header {
+    height: 18vw; 
+    background-color: #fffcf6;
+    border-radius: 27px;
+}
+
+.profile {
+    width: 65%;
+    height: calc(var(--variable-width));
+    border-radius: 50%;
+    margin-top: -20%;
+    margin-bottom: 10%;
+}
+
+.header-large-txt {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2.75vw;
+    font-weight: bold;
+    color: #c57b54;
+}
+
+.header-small-txt {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.5vw;
+    color: #332f26;
+}
+
+.card-style {
+    height: 300px;
+    width: 230px;
+    margin: 5px 10px;
+    border: 0;
+    background-size:cover;  background-position: center;
+}
+
+.active-card {
+    width: 29px;
+    height: 28px;
+    background-color: #d2e8ff;
+    border-radius: 0 20% 60% 20%;
+    
+}
+
+.active-card-circle{
+    width: 14px;
+    height: 14px;
+    background-color: #5dd823;
+    border-radius: 50%;
+}
+
+.header-svg {
+    width: 160%;
+    margin-top: -45%;
+    margin-left: -33%;   
+}
+
+.simple {
+    text-decoration: none;
+    color: black;
+}
+.simple:hover {
+    text-decoration: none;
+    color: black;
+}
+
+@media only screen and (max-width: 1010px) {
+    .header-svg {
+      display: none;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .profile {
+        width: 40%;
+        height: calc(var(--variable-width));
+        border-radius: 50%;
+        margin-top: -10%;
+        margin-bottom: 5%;
+    }
+
+    .header {
+        height: 24vw; 
+        width: 65%;
+        background-color: #fffcf6;
+        border-radius: 27px;
+        margin-top: 20px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .profile {
+        width: 50%;
+        height: calc(var(--variable-width));
+        border-radius: 50%;
+        margin-top: -20%;
+        margin-bottom: 5%;
+    }
+
+    .header {
+        height: 40vw; 
+        width: 100%;
+        background-color: #fffcf6;
+        border-radius: 27px;
+        margin-top: 20px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .header-container{
+        margin-top: 40vw;
+    }
+
+    .header-large-txt {
+        text-align: center;
+        vertical-align: middle;
+        font-size: 5.25vw;
+        font-weight: bold;
+        color: #c57b54;
+    }
+
+    .header-small-txt {
+        text-align: center;
+        vertical-align: middle;
+        font-size: 3.5vw;
+        color: #332f26;
+    }
+}

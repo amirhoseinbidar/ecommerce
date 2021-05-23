@@ -1,0 +1,32 @@
+.login-headbar {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    direction: rtl;
+}
+
+
+.login-title {
+    font-size: 1.5rem;
+    margin: 20px 10px;
+}
+
+.turn-right{
+    display: flex;
+    direction: rtl;
+}
+
+
+input[type=button] {
+    margin: 8px 0px;
+}
+
+
+@media only screen and (max-width: 770px) {
+    .top-margin {
+        margin-top: 2vw;
+        margin-bottom: 30px;
+    }
+    
+}

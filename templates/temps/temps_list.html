@@ -1,0 +1,58 @@
+{% extends "profile_base.html" %}
+{% load static %}
+
+{% block profile_content %}
+<div class="container-fluid header-container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="header center-column">
+                <img src="{% static 'images/profile.png'%}" class="profile">
+                <div>{{ user.username }}</div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="header h-100">
+                <div class="container-fluid h-100">
+                    <div class="row h-100">
+                        <div class="col-lg-9 center h-100">
+                            <div class="h-50">
+                                <p class="header-large-txt text-right" dir="rtl">
+                                    صفحه انتخاب قالب پورتفولیتو</p>
+                                <p class="header-small-txt text-right" dir="rtl">
+                                    با چند کلیک ساده پورتفولیوی خودت رو بساز</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <img class="header-svg" src="{% static 'images/sapiens.svg'%}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <p class="text-right margin-template " dir="rtl">انتخاب قالب</p>
+    <div class="center-row">
+
+        {% for obj in object_list %}
+            <a href="{% url 'products:activate_tempalte' obj.name %}">
+                <div class="card card-style" style="
+                    background-image: url('{{obj.image.url}}');
+                ">
+                    {% if user.active_template ==  obj %}
+                    <div class="active-card center">
+                        <div class="active-card-circle"></div>
+                    </div>
+                    {% endif %}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/template.css' %}" type='text/css'>
+{% endblock %}

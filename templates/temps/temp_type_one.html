@@ -1,0 +1,125 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title> Theme 1 </title>
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="{% static  'temp_type_one/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="{% static  'temp_type_one/lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="{% static  'temp_type_one/css/style.css' %}" rel="stylesheet">
+    <!-- Responsive css -->
+    <link href="{% static  'temp_type_one/css/responsive.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- start section header -->
+    <div id="header" style="
+    {% if object.head_image %}
+        background-image: url( {{ object.head_image.url }} );
+    {% else %}
+        background-image: url( {% static 'temp_type_one/images/home-bg.jpg' %} );
+    {% endif %}
+  " class="home">
+
+        <div class="container">
+            <div class="header-content">
+                <h1>
+                    {% if object.title %}
+                    {{ object.title }}
+                    {% else %}
+                    من وحید هستم
+                    {% endif %}
+                </h1>
+                <p>
+                    {% if object.sub_title %}
+                        {{ object.sub_title }}
+                    {% else %}
+                        designer, developer
+                    {% endif %}
+                </p>
+                <ul class="list-unstyled list-social">
+                    {% if object.facebook_link %}
+                    <li><a href="{{ object.facebook_link }}"><i class="ion-social-facebook"></i></a></li>
+                    {% endif %}
+                    {% if object.twitter_link %}
+                    <li><a href="{{ object.twitter_link }}"><i class="ion-social-twitter"></i></a></li>
+                    {% endif %}
+                    {% if object.insta_link %}
+                    <li><a href="{{ object.insta_link }}"><i class="ion-social-instagram"></i></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End section header -->
+
+
+    <!-- start section about us -->
+    <div id="about" class="paddsection">
+        <div class="container">
+            <div class="row justify-content-between">
+
+                <div class="col-lg-4 ">
+                    <div class="div-img-bg">
+                        <div class="about-img">
+                            <img src="
+                            {% if object.description_image %}
+                                {{ description_image }}
+                            {% else %}
+                                {% static 'temp_type_one/images/me.jpg' %}
+                            {% endif %}
+                            " class="img-responsive" alt="me">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="about-descr">
+
+                        <p class="p-heading text-right">
+                            {% if object.description_title %}
+                            {{ object.description_title }}
+                            {% else %}
+                            سلام اینجا تهران است
+                            {% endif %}
+                        </p>
+                        <p class=" text-right">
+                            {% if object.description_detail %}
+                                {{ object.description_detail }}
+                            {% else %}
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با است
+                                فاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچ
+                                نان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف
+                                بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آین
+                                ده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را
+                                برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایج
+                                اد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها
+                                ، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی،
+                                و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+                            {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section about us -->
+</body>
+
+</html>

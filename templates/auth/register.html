@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="login-headbar">
+    <img src="{% static 'images/Group 6.svg' %}" alt="">
+    <span>
+        پورتفولیتو
+    </span>
+</div>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="container-fluid top-margin">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'images/login-logo.svg' %}" class="w-100" alt="">
+            </div>
+            <div class="col-md-6 center-column center-row">
+                <div class="w-100 turn-right">
+                    <span class="login-title"> ثبت نام در سایت </span>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="ایمیل" name='{{ form.email.name }}'
+                                class='w-100 input-text'>
+                            <div class="error">
+                                {% for error in form.eamil.errors %}
+                                <span> {{error}} </span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="نام کاربری" name='{{ form.userName.name }}'
+                                class='w-100 input-text'>
+                            <div class="error">
+                                {% for error in form.userName.errors %}
+                                <span> {{error}} </span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="password" placeholder="تایید پسورد" name='{{ form.password2.name }}'
+                                class='w-100 input-text'>
+                            <div class="error">
+                                {% for error in form.password2.errors %}
+                                <span> {{error}} </span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="password" placeholder="پسورد" name='{{ form.password.name }}'
+                                class='w-100 input-text'>
+                            <div class="error">
+                                {% for error in form.password.errors %}
+                                <span> {{error}} </span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6 turn-right">
+                            <input type="submit" class="input-btn" value="ثبتنام">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="{% url 'login' %}">صفحه لاگین</a>
+                        </div>
+                        <div class="col-md-6 turn-right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login_base.css' %}" type='text/css'>
+{% endblock %}

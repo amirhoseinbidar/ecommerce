@@ -1,0 +1,331 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
+<link type="text/css" rel="stylesheet" id="dark-mode-general-link">
+<style lang="en" type="text/css" id="dark-mode-custom-style"></style>
+<style lang="en" type="text/css" id="dark-mode-native-style"></style>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'temp_type_two/w3.css' %}">
+    <link rel="stylesheet" href="{% static 'temp_type_two/css.css' %}">
+    <link rel="stylesheet" href="{% static 'temp_type_two/font-awesome.min.css' %}">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+
+        /* Set the width of the sidebar to 120px */
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+
+        /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+        #main {
+            margin-left: 120px
+        }
+
+        /* Remove margins from "page content" on small screens */
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0
+            }
+        }
+    </style>
+</head>
+
+<body class="w3-black">
+
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <!-- Avatar image in top left corner -->
+        <img src="
+        {% if object.head_image %}
+            {{ object.head_image.url }}
+        {% else %}
+            {% static 'temp_type_two/avatar_smoke.jpg' %}
+        {% endif %}
+        " style="width:100%">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>خانه</p>
+        </a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>درباره من</p>
+        </a>
+        <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-eye w3-xxlarge"></i>
+            <p>غکس ها</p>
+        </a>
+    </nav>
+
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#" class="w3-bar-item w3-button" style="width:25% !important">خانه</a>
+            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">درباره من</a>
+            <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">عکس ها</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+        <!-- Header/Home -->
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <h1 class="w3-jumbo">
+                {% if object.head_title %}
+                {{ object.head_title }}
+                {% else %}
+                من عباس بوعذار هستم
+                {% endif %}
+            </h1>
+            <p>
+                {% if object.head_sub_title %}
+                {{ object.head_sub_title }}
+                {% else %}
+                فوتبالیست و عکاس
+                {% endif %}
+            </p>
+            <img src="   
+                {% if object.head_image %}
+                    {{ object.head_image.url }}
+                {% else %}
+                    {% static 'temp_type_two/man_smoke.jpg' %}
+                {% endif %}" 
+                alt="boy" class="w3-image" width="992" height="1108">
+        </header>
+
+        <!-- About Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+            <h2 class="w3-text-light-grey" style="direction: rtl;">
+                {% if object.about_me_title %}
+                {{ object.about_me_title }}
+                {% else %}
+                کسی که اسمش نه د داره نه ح داره
+                {% endif %}
+            </h2>
+            <hr style="width:200px; margin-left: 80%;" class="w3-opacity">
+
+            <p style="direction: rtl;">
+                {% if object.about_me_description %}
+                {{ object.about_me_description }}
+                {% else %}
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه
+                روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط
+                فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود
+                ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد
+                گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد
+                تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای
+                علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد
+                کرد. در این صورت می توان امید داشت که تمام و دشواری موجود
+                در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان
+                مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات
+                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
+                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردها
+                ی متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گ
+                ذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شنا
+                خت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان
+                فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه
+                راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای
+                اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+
+                {% endif %}
+
+
+            </p>
+            <h3 class="w3-padding-16 w3-text-light-grey" style="direction: rtl;">توانایی ها</h3>
+
+            {% if object.ablility_1_title and object.ablility_1_precent %}
+            <p>{{ object.ablility_1_title }}</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width: {{ object.ablility_1_precent }}%"></div>
+            </div>
+            {% else %}
+            <p>داشتن یک ر در نام</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+            </div>
+            {% endif %}
+
+            {% if object.ablility_2_title and object.ablility_2_precent %}
+            <p>{{ object.ablility_2_title }}</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width: {{ object.ablility_2_precent }}%"></div>
+            </div>
+            {% else %}
+            <p>دیزاین وب</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+            </div>
+            {% endif %}
+
+            {% if object.ablility_3_title and object.ablility_3_precent %}
+            <p>{{ object.ablility_3_title }}</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width: {{ object.ablility_3_precent }}%"></div>
+            </div>
+            {% else %}
+            <p>فوتوشاپ</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+            </div>
+            {% endif %}
+
+            <br>
+
+            <div class="flex-row-center w3-padding-16 w3-section w3-light-grey">
+                {% if object.more_info_1_number and object.more_info_1_text %}
+                <div class="w3-quarter flex-column-center w3-section">
+                    <span class="w3-xlarge">{{ object.more_info_1_number }}+</span>
+                    {{ object.more_info_1_text }}
+                </div>
+                {% else %}
+                <div class="w3-quarter flex-column-center w3-section">
+                    <span class="w3-xlarge">11+</span>
+                    همکاران
+                </div>
+                {% endif %}
+
+                {% if object.more_info_2_number and object.more_info_2_text %}
+                <div class="w3-quarter flex-column-center w3-section">
+                    <span class="w3-xlarge">{{ object.more_info_2_number }}+</span>
+                    {{ object.more_info_2_text }}
+                </div>
+                {% else %}
+                <div class="w3-quarter flex-column-center w3-section">
+                    <span class="w3-xlarge">55+</span>
+                    پروژه های انجام شده
+                </div>
+                {% endif %}
+
+                {% if object.more_info_3_number and object.more_info_3_text %}
+                <div class="w3-quarter flex-column-center w3-section">
+                    <span class="w3-xlarge">{{ object.more_info_3_number }}+</span>
+                    {{ object.more_info_3_text }}
+                </div>
+                {% else %}
+                <div class="w3-quarter flex-column-center w3-section">
+                    <span class="w3-xlarge">89+</span>
+                    مشتری های راضی
+                </div>
+                {% endif %}
+
+                {% if object.more_info_4_number and object.more_info_4_text %}
+                <div class="w3-quarter flex-column-center w3-section">
+                    <span class="w3-xlarge">{{ object.more_info_4_number }}+</span>
+                    {{ object.more_info_4_text }}
+                </div>
+                {% else %}
+                <div class="w3-quarter flex-column-center w3-section">
+                    <span class="w3-xlarge">85+</span>
+                    ارتباط نداشتن با محمدی نامی
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div class="w3-padding-64 w3-content" id="photos">
+        <h2 class="w3-text-light-grey" style="direction: rtl;">عکس ها</h2>
+        <hr style="width:200px; margin-left: 80%;" class="w3-opacity">
+
+        <!-- Grid for photos -->
+        <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half">
+                
+                <img src="
+                {% if object.img_1 %}
+                {{ object.img_1.url }}
+                {% else %}
+                {% static 'temp_type_two/wedding.jpg' %}
+                {% endif %}" style="width:100%">
+                
+
+                
+                <img src="
+                {% if object.img_2 %}
+                {{ object.img_2.url }}
+                {% else %}
+                {% static 'temp_type_two/rocks.jpg' %}
+                {% endif %}" style="width:100%">
+                
+
+                
+                <img src="{% if object.img_3 %}
+                {{ object.img_3.url }}
+                {% else %}
+                {% static 'temp_type_two/sailboat.jpg' %}
+                {% endif %}" style="width:100%">
+                
+                <img src="{% if object.img_3 %}
+                {{ object.img_4.url }}
+                {% endif %}" style="width:100%">
+            </div>
+
+            <div class="w3-half">
+               
+                <img src=" 
+                {% if object.img_5 %}
+                {{ object.img_5.url }}
+                {% else %}
+                {% static 'temp_type_two/underwater.jpg' %}
+                {% endif %}" style="width:100%">
+                
+
+                
+                <img src="
+                {% if object.img_6 %}
+                {{ object.img_6.url }}
+                {% else %}
+                {% static 'temp_type_two/chef.jpg' %}
+                {% endif %}" style="width:100%">
+                
+
+                
+                <img src="
+                {% if object.img_7 %}
+                {{ object.img_7.url }}
+                {% else %}
+                {% static 'temp_type_two/wedding.jpg' %}
+                {% endif %}
+                " style="width:100%">
+                
+                
+                <img src="{% if object.img_8 %}
+                {{ object.img_8.url }}
+                {% else%}
+                {% static 'temp_type_two/p6.jpg' %}
+                {% endif %}" style="width:100%">
+                
+            </div>
+            <!-- End photo grid -->
+        </div>
+        <!-- End Portfolio Section -->
+    </div>
+    <!-- END PAGE CONTENT -->
+    </div>
+</body>
+
+</html>
