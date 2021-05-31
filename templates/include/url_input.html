@@ -1,0 +1,6 @@
+<input type="url" value="{% if field.value %}{{ field.value }}{% endif %}" class="w-100" name="{{ field.name }}" placeholder="{{ placeholder }}">
+{% for error in field.errors %}
+<div class="error">
+    <span> {{error}} </span>
+</div>
+{% endfor %}

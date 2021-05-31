@@ -6,9 +6,15 @@
 
 a:hover {
     text-decoration: none;
+    color: black;
 }
 
-.input-btn {
+a {
+    color: black;
+}
+
+input[type=submit],
+input[type=button] {
     padding: 4px 16px;
     margin: 8px 8px;
     border: solid 2px #7bb9ff;
@@ -17,17 +23,19 @@ a:hover {
     text-align:center;
 }
 
-
-.input-btn:active {
+input[type=submit]:active,
+input[type=button]:active {
     background-color: #7bb9ff;
 }
-
-.input-btn:hover {
+input[type=submit]:hover,
+input[type=button]:hover {
     cursor: pointer;
 }
 
-
-.input-text {
+input[type=url],
+input[type=password],
+input[type=text],
+input[type=email] {
     padding: 4px 16px;
     margin: 8px 0;
     border: solid 2px #c4c0b8;
@@ -40,7 +48,10 @@ input[type=email]:read-only {
     
 }
 
-.input-text:focus {
+input[type=url]:focus,
+input[type=password]:focus,
+input[type=text]:focus,
+input[type=email]:focus {
     border: solid 2px #000000;
     outline: none;
 }

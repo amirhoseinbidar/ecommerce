@@ -1,0 +1,8 @@
+<textarea name="{{ template_form.description_detail.name }}" placeholder="متن">
+    {{ field.value }}
+</textarea>
+{% for error in field.errors %}
+<div class="error">
+    <span> {{error}} </span>
+</div>
+{% endfor %}

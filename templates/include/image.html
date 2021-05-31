@@ -1,0 +1,25 @@
+{% if field_obj %}
+<div>
+    <input type="checkbox" name="{{ field.name }}-clear">
+    <span style="margin: 0 10px;">حذف عکس</span>
+</div>
+{% endif %}
+<div>
+
+    <div class="top-title center-row">
+        {% if field_obj %}
+        <span> عکس : </span>
+        <a class="top-title-a" target="_blank" href="{{ field_obj.url }}"
+            style="color: blue;">{{ field_obj.name }}</a>
+
+        {% endif %}
+    </div>
+
+    <input type="file" name="{{ field.name }}" accept="image/*">
+   
+    <div class="error">
+        {% for error in field.errors %}
+        <span> {{error}} </span>
+        {% endfor %}
+    </div>
+</div>

@@ -23,3 +23,50 @@
 .field-row > input {
     flex: 1; 
 }
+
+input[type=file] {
+    direction: rtl;
+    cursor: pointer;
+    width: 270px;
+    margin: 0;
+    padding: 0;
+}
+
+input[type=file]::-webkit-file-upload-button{
+    padding: 4px 16px;
+    margin: 8px 0 8px 8px;
+    border: solid 2px #7bb9ff;
+    background-color: #eff7ff;
+    border-radius: 10px;
+    text-align:center;
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    height: 10rem;
+    padding: 12px;
+    direction: rtl;
+    border-radius: 10px;
+}
+
+textarea:focus {
+    border: solid 2px #000000;
+    outline: none;
+}
+
+.top-title {
+    margin: 0;
+    font-size: 12px;
+    direction: rtl;
+    text-align: right;
+}
+
+.top-title-a {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    width: 100px;
+    white-space: nowrap;
+}

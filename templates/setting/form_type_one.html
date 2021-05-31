@@ -1,0 +1,39 @@
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-row justify-content-end">
+        {% include "include/image.html" with field=template_form.head_image field_obj=template_form.instance.head_image %}
+        <div style="margin: 0 10px;">: عکس عنوان</div>
+    </div>
+    <div class="col-md-6 center-row center-column center-column">
+        {% include "include/text_input.html" with field=template_form.title placeholder="عنوان" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-column">
+        {% include "include/url_input.html" with field=template_form.facebook_link placeholder="لینک فیسبوک" %}
+    </div>
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.sub_title placeholder="زیر عنوان" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6  center-column">
+        {% include "include/url_input.html" with field=template_form.twitter_link placeholder="لینک توییتر" %}
+    </div>
+    <div class="col-md-6  center-column">
+        {% include "include/url_input.html" with field=template_form.insta_link placeholder="لینک اینستا" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-row justify-content-end">
+        {% include "include/image.html" with field=template_form.description_image field_obj=template_form.instance.description_image %}
+        <div style="margin: 0 10px;">: عکس متن</div>
+    </div>
+    <div class="col-md-6 center-row center-column center-column center-column">
+        {% include "include/text_input.html" with field=template_form.description_title placeholder="عنوان متن" %}
+    </div>
+</div>
+<div>
+    <div class="col-md-12">
+        {% include "include/text_area.html" with field=template_form.description_detail placeholder="متن" %}
+    </div>
+</div>

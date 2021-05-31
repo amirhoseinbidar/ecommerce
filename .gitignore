@@ -158,3 +158,5 @@ Thumbs.db
 .env
 
 static_cdn/
+
+workspace.code-workspace

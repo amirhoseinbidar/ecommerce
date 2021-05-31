@@ -80,7 +80,7 @@
                         <div class="about-img">
                             <img src="
                             {% if object.description_image %}
-                                {{ description_image }}
+                                {{ object.description_image.url }}
                             {% else %}
                                 {% static 'temp_type_one/images/me.jpg' %}
                             {% endif %}
