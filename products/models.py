@@ -51,7 +51,7 @@ class TemplateTypeTwo(models.Model):
     img_5 = models.ImageField(blank=True, null=True)
     img_6 = models.ImageField(blank=True, null=True)
     img_7 = models.ImageField(blank=True, null=True)
-    img_9 = models.ImageField(blank=True, null=True)
+    img_8 = models.ImageField(blank=True, null=True)
 
     template_path = 'temps/temp_type_two.html'
 

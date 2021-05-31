@@ -1,6 +1,4 @@
-<textarea name="{{ template_form.description_detail.name }}" placeholder="متن">
-    {{ field.value }}
-</textarea>
+<textarea name="{{ template_form.description_detail.name }}" placeholder="متن">{% if field.value %}{{ field.value }}{% endif %}</textarea>
 {% for error in field.errors %}
 <div class="error">
     <span> {{error}} </span>

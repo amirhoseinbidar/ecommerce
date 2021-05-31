@@ -1,12 +1,21 @@
 {% extends "profile_base.html" %}
 {% load static %}
 
+
+{% block active_templates %}sidebar-btn-active{% endblock %}
+
 {% block profile_content %}
 <div class="container-fluid header-container">
     <div class="row">
         <div class="col-md-4">
             <div class="header center-column">
-                <img src="{% static 'images/profile.png'%}" class="profile">
+                <img src="
+                {% if user.avatar %}
+                {{ user.avatar.url }}
+                {% else %}
+                {% static 'images/profile.png'%}
+                {% endif %}
+                " class="profile">
                 <div>{{ user.username }}</div>
             </div>
         </div>

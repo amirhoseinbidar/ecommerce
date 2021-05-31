@@ -1,6 +1,8 @@
 {% extends "profile_base.html" %}
 {% load static %}
 
+{% block active_setting %}sidebar-btn-active{% endblock %}
+
 {% block profile_content %}
 <form action="." method="POST" enctype="multipart/form-data">
     {% csrf_token %}
@@ -22,10 +24,10 @@
         </div>
         {% if temp_name == "type_one" %}
         {% include "setting/form_type_one.html" %}
-        {% elif temp_neme == "type_two" %}
+        {% elif temp_name == "type_two" %}
         {% include "setting/form_type_two.html" %}
         {% endif %}
-        <div class="col-md-12 ">
+        <div class="col-md-12 " style="margin-bottom: 150px;">
             <input type="submit" class="float-right" value="اعمال تغییرات" class="input-btn">
         </div>
     </div>

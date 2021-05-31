@@ -1,0 +1,126 @@
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-row justify-content-end">
+        {% include "include/image.html" with field=template_form.head_image field_obj=template_form.instance.head_image %}
+        <div style="margin: 0 10px;">: عکس عنوان</div>
+    </div>
+    <div class="col-md-6 center-row center-column center-column">
+        {% include "include/text_input.html" with field=template_form.head_precent placeholder="تیتر عنوان" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.more_info_1_text placeholder="تیتر درباره من" %}
+    </div>
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.more_info_2_number placeholder="زیر تیتر عنوان" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-12  center-column">
+        {% include "include/text_area.html" with field=template_form.about_me_description placeholder="توضیحات درباره من" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.ablility_1_precent placeholder="درصد توانایی اول" %}
+    </div>
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.ablility_1_title placeholder="عنوان توانایی اول" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.ablility_2_precent placeholder="درصد توانایی دوم" %}
+    </div>
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.ablility_2_title placeholder="عنوان توانایی دوم" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.ablility_3_precent placeholder="درصد توانایی سوم" %}
+    </div>
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.ablility_3_title placeholder="عنوان توانایی سوم" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.ablility_4_precent placeholder="درصد توانایی چهارم" %}
+    </div>
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.ablility_4_title placeholder="عنوان توانایی چهارم" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.more_info_1_number placeholder="تعداد اطلاعات اول" %}
+    </div>
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.more_info_1_text placeholder="متن اطلاعات اول" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.more_info_2_number placeholder="تعداد اطلاعات دوم" %}
+    </div>
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.more_info_2_text placeholder="متن اطلاعات دوم" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.more_info_3_number placeholder="تعداد اطلاعات سوم" %}
+    </div>
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.more_info_3_text placeholder="متن اطلاعات سوم" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.more_info_4_number placeholder="تعداد اطلاعات چهارم" %}
+    </div>
+    <div class="col-md-6 center-column">
+        {% include "include/text_input.html" with field=template_form.more_info_4_text placeholder="متن اطلاعات چهارم" %}
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-row justify-content-end">
+        {% include "include/image.html" with field=template_form.img_1 field_obj=template_form.instance.img_1 %}
+        <div style="margin: 0 10px;">: عکس اول</div>
+    </div>
+    <div class="col-md-6 center-row justify-content-end">
+        {% include "include/image.html" with field=template_form.img_2 field_obj=template_form.instance.img_2 %}
+        <div style="margin: 0 10px;">: عکس دوم</div>
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-row justify-content-end">
+        {% include "include/image.html" with field=template_form.img_3 field_obj=template_form.instance.img_3 %}
+        <div style="margin: 0 10px;">: عکس سوم</div>
+    </div>
+    <div class="col-md-6 center-row justify-content-end">
+        {% include "include/image.html" with field=template_form.img_4 field_obj=template_form.instance.img_4 %}
+        <div style="margin: 0 10px;">: عکس چهارم</div>
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-row justify-content-end">
+        {% include "include/image.html" with field=template_form.img_5 field_obj=template_form.instance.img_5 %}
+        <div style="margin: 0 10px;">: عکس پنجم</div>
+    </div>
+    <div class="col-md-6 center-row justify-content-end">
+        {% include "include/image.html" with field=template_form.img_6 field_obj=template_form.instance.img_6 %}
+        <div style="margin: 0 10px;">: عکس ششم</div>
+    </div>
+</div>
+<div class="row justify-content-end field-margin">
+    <div class="col-md-6 center-row justify-content-end">
+        {% include "include/image.html" with field=template_form.img_7 field_obj=template_form.instance.img_7 %}
+        <div style="margin: 0 10px;">: عکس هفتم</div>
+    </div>
+    <div class="col-md-6 center-row justify-content-end">
+        {% include "include/image.html" with field=template_form.img_8 field_obj=template_form.instance.img_8 %}
+        <div style="margin: 0 10px;">: عکس هشتم</div>
+    </div>
+</div>

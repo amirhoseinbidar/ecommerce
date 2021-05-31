@@ -7,7 +7,7 @@
     <div class="container-fluid border-bottom headbar">
         <div class="row">
             <div class="col-md-6">
-                <p class="top-font">پنجشنبه ۲۳ اردیبهشت ۱۴۰۰</p>
+                <p class="top-font">{% now "jS F Y H:i" %}</p>
             </div>
             <div class="col-md-6">
                 <p class="text-right top-font" dir="rtl">صفحه اصلی > قالب ها </p>
@@ -36,20 +36,20 @@
     </div>
     <div class="h-75 sidebar-center-column">
         <a href="{% url 'products:template' %}" class="simple">
-            <div class='sidebar-btn sidebar-btn-active'>
+            <div class='sidebar-btn {% block active_templates %}{% endblock %}'>
                 <span> قالب ها</span>
                 <img src="{% static 'images/Ticket.svg' %}" alt="">
             </div>
         </a>
         <a href="{% url 'products:setting' %}" class="simple">
-            <div class='sidebar-btn'>
+            <div class='sidebar-btn {% block active_setting%}{% endblock %}'>
                 <span> تنظیمات</span>
                 <img src="{% static 'images/Setting.svg' %}" alt="">
             </div>
         </a>
         {% if user.active_template %}
         <a href="{% url 'products:show' user.username %}" class="simple">
-            <div class='sidebar-btn'>
+            <div class='sidebar-btn '>
                 <span> نمایش </span>
                 <img src="{% static 'images/Ticket Star.svg' %}" alt="">
             </div>

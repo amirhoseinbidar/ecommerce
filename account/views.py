@@ -27,8 +27,8 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 from django.urls import reverse
-
 UserModel = get_user_model()
+User = get_user_model()
 
 
 def home_page(request):
@@ -68,6 +68,9 @@ def contact_page(request):
 
 def login_page(request):
     form = LoginForm(request.POST or None)
+    if request.user.is_authenticated:
+        return redirect(reverse('products:template'))
+
     context = {
         "form": form
     }
@@ -85,7 +88,7 @@ def login_page(request):
     return render(request, "auth/login.html", context)
 
 
-User = get_user_model()
+
 
 
 def register_page(request):
