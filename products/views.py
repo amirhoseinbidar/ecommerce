@@ -6,7 +6,7 @@ from .forms import AccountForm
 from django.contrib.auth.decorators import login_required
 from .template_map import template_map
 from account.models import User
-
+from django.contrib.auth import logout
 
 class TemplateListView(ListView):
     queryset = TemplateImage.objects.all()
@@ -70,3 +70,4 @@ def setting_page(request):
         template_obj.save()
 
     return render(request, "setting/setting.html", context)
+

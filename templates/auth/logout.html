@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="login-headbar">
+    <img src="{% static 'images/Group 6.svg' %}" alt="">
+    <span>
+        پورتفولیتو
+    </span>
+</div>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="container-fluid top-margin">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'images/login-logo.svg' %}" class="w-100" alt="">
+            </div>
+            <div class="col-md-6 center-column center-row">
+                <div class="w-100 turn-right">
+                    <span class="login-title"> خروج از سایت </span>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>آیا از خروج از سایت مطمئنید؟</p>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="yes">بله</label><br>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="no">خیر</label><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6 turn-right">
+                        <a href="{% url 'login' %}">
+                            <input type="submit" class="input-btn" value="خروج">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</form>
+{% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/login_base.css' %}" type='text/css'> {% endblock %}

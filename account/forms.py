@@ -68,3 +68,9 @@ class RegisterForm(forms.Form):
         if password != password2:
             raise forms.ValidationError("پسورد ها باید برابر باشند")
         return password2
+
+class LogoutForm(forms.Form):
+    certainity = forms.ChoiceField(
+
+    )
+

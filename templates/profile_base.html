@@ -1,7 +1,4 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <main class="sidebar-margin">
     <!-- HEADBAR -->
     <div class="container-fluid border-bottom headbar">
@@ -41,10 +38,18 @@
                 <img src="{% static 'images/Ticket.svg' %}" alt="">
             </div>
         </a>
+
         <a href="{% url 'products:setting' %}" class="simple">
             <div class='sidebar-btn {% block active_setting%}{% endblock %}'>
                 <span> تنظیمات</span>
                 <img src="{% static 'images/Setting.svg' %}" alt="">
+            </div>
+        </a>
+
+        <a href="{% url 'logout' %}" class="simple">
+            <div class='sidebar-btn {% block content1%}{% endblock %}'>
+                <span>خروج</span>
+                <img src="{% static 'images/logout.png' %}" alt="">
             </div>
         </a>
         {% if user.active_template %}
@@ -58,12 +63,12 @@
     </div>
 </main>
 <!-- SIDE BAR END -->
-{% endblock %}
-
-{% block js %}
+{% endblock %} {% block js %}
 <script>
-    $('.menu-img').on('click', function () {
-        $('.sidebar').animate({ 'width': 'toggle' });
+    $('.menu-img').on('click', function() {
+        $('.sidebar').animate({
+            'width': 'toggle'
+        });
     });
 </script>
 {% endblock %}

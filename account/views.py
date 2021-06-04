@@ -27,6 +27,7 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 from django.urls import reverse
+from django.contrib.auth import logout
 UserModel = get_user_model()
 User = get_user_model()
 
@@ -275,3 +276,11 @@ class PasswordChangeDoneView(PasswordContextMixin, TemplateView):
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
+
+
+
+def logout_page(request):
+    logout(request)
+    return redirect('/')
+
+
