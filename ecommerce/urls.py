@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from account.views import home_page, about_page, contact_page, login_page, register_page,logout_page
+from account.views import home_page, about_page, contact_page, login_page, register_page,logout_page,forget_password,send_email_done,change_password
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -31,25 +31,10 @@ urlpatterns = [
     path('register', register_page, name='register'),
     path('logout', logout_page, name='logout'),
     path('templates/', include("products.urls")),
-    path('reset_password/',
-         auth_views.PasswordResetView.as_view(
-             template_name='resetting/password_rest.html'),
-         name='password_reset'),
-
-    path('reset_password_sent/',
-         auth_views.PasswordResetDoneView.as_view(
-             template_name='resetting/password_rest_sent.html'),
-         name='password_reset_done'),
-
-    path('reset<uidb64>/<token>/',
-         auth_views.PasswordResetConfirmView.as_view(
-             template_name='resetting/password_rest_form.html'),
-         name='password_reset_confirm'),
-
-    path('reset_password_complete/',
-         auth_views.PasswordResetCompleteView.as_view(
-             template_name='resetting/password_reset_done'),
-         name='reset_password_complete'),
+    path('forget-password/',forget_password),
+    path('forget-password/send-email-sucessfull/',send_email_done,name='send-email-sucessfull'),
+    path('change-password/',change_password,name='change_password'),
+    
 ]
 if settings.DEBUG:
     # add root static files

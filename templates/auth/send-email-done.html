@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="login-headbar">
+    <img src="{% static 'images/Group 6.svg' %}" alt="">
+    <span>
+		پورتفولیتو
+	</span>
+</div>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="container-fluid top-margin">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'images/login-logo.svg' %}" class="w-100" alt="">
+            </div>
+            <div class="col-md-6 center-column center-row">
+                <div class="w-100 turn-left">
+                    <span class="login-title"> {{text}} </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/login_base.css' %}" type='text/css'> {% endblock %}
