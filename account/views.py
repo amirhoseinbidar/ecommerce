@@ -136,3 +136,9 @@ def change_password(request):
         
 
     return render(request, "auth/change-password.html", context)
+
+def change_password_done(request):
+    context={
+        'text':'رمز عبور شما با موفقیت تغییر یافت'
+    }
+    return render(request , 'auth/change-password-done.html' , context)
