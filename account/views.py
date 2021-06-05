@@ -11,6 +11,7 @@ from django.http import HttpResponseRedirect
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.contrib.auth import logout
+from django.contrib import messages
 
 User = get_user_model()
 UserModel = get_user_model()
@@ -92,9 +93,10 @@ def register_page(request):
 
     return render(request, "auth/register.html", context)
 
-def logout_page(request):
-    logout(request)
-    return redirect('/')
+def logout_request(request):
+	logout(request)
+	messages.info(request, "You have successfully logged out.") 
+	return redirect("/")
 
 
 def forget_password(request):

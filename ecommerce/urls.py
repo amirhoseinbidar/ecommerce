@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from account.views import home_page, about_page, contact_page, login_page, register_page,logout_page,forget_password,send_email_done,change_password
+from account.views import home_page, about_page, contact_page, login_page, register_page,logout_request,forget_password,send_email_done,change_password
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -29,7 +29,7 @@ urlpatterns = [
     path('about-us', about_page),
     path('contact-us', contact_page),
     path('register', register_page, name='register'),
-    path('logout', logout_page, name='logout'),
+    path('logout', logout_request, name='logout'),
     path('templates/', include("products.urls")),
     path('forget-password/',forget_password),
     path('forget-password/send-email-sucessfull/',send_email_done,name='send-email-sucessfull'),
