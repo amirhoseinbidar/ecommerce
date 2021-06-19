@@ -46,17 +46,17 @@
     <div class="center-row">
 
         {% for obj in object_list %}
-            <a href="{% url 'products:activate_tempalte' obj.name %}">
-                <div class="card card-style" style="
+        <a href="{% url 'products:activate_tempalte' obj.name %}">
+            <div class="card card-style" style="
                     background-image: url('{{obj.image.url}}');
                 ">
-                    {% if user.active_template ==  obj %}
-                    <div class="active-card center">
-                        <div class="active-card-circle"></div>
-                    </div>
-                    {% endif %}
+                {% if user.active_template == obj %}
+                <div class="active-card center">
+                    <div class="active-card-circle"></div>
                 </div>
-            </a>
+                {% endif %}
+            </div>
+        </a>
         {% endfor %}
     </div>
 </div>

@@ -47,9 +47,9 @@
         </a>
 
         <a href="{% url 'logout' %}" class="simple">
-            <div class='sidebar-btn {% block content1%}{% endblock %}'>
-                <span>خروج</span>
-                <img src="{% static 'images/logout.png' %}" alt="">
+            <div class='sidebar-btn'>
+                <span>خروج </span>
+                <img src="{% static 'images/logout.svg' %}" alt="">
             </div>
         </a>
         {% if user.active_template %}
