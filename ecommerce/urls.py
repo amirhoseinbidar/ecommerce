@@ -29,7 +29,7 @@ urlpatterns = [
     path('about-us', about_page),
     path('contact-us', contact_page),
     path('register', register_page, name='register'),
-    path('logout', logout_request, name='logout'),
+    path('logout/', logout_request, name='logout'),
     path('templates/', include("products.urls")),
     path('forget-password/',forget_password),
     path('forget-password/send-email-sucessfull/',send_email_done,name='send-email-sucessfull'),
