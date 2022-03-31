@@ -7,28 +7,32 @@
 <form action="." method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container-fluid top-margin">
-        <div class="container-title ">
-            اطلاعات اکانت
-        </div>
-        <div class="row justify-content-end field-margin">
-            <div class="col-md-6 center-row justify-content-end">
-                {% include "include/image.html" with field=account_form.avatar field_obj=account_form.instance.avatar %}
-                <div style="margin: 0 10px;">: آواتار</div>
+        <div id="container-data-title">
+            <div class="container-title ">
+                اطلاعات اکانت
             </div>
-            <div class="col-md-6 center-column center-row">
-                {% include "include/text_input.html" with field=account_form.name placeholder="نام" %}
+            <div class="row justify-content-end field-margin">
+                <div class="col-md-6 center-row justify-content-end">
+                    {% include "include/image.html" with field=account_form.avatar field_obj=account_form.instance.avatar %}
+                    <div style="margin: 0 10px;">: آواتار</div>
+                </div>
+                <div class="col-md-6 center-column center-row">
+                    {% include "include/text_input.html" with field=account_form.name placeholder="نام" %}
+                </div>
             </div>
-        </div>
-        <div class="container-title">
-            اطلاعات قالب
+            <div class="container-title">
+                اطلاعات قالب
+            </div>
         </div>
         {% if temp_name == "type_one" %}
         {% include "setting/form_type_one.html" %}
         {% elif temp_name == "type_two" %}
         {% include "setting/form_type_two.html" %}
+        {% else %}
+        {% include "setting/none_form.html" %}
         {% endif %}
         <div class="col-md-12 " style="margin-bottom: 150px;">
-            <input type="submit" class="float-right" value="اعمال تغییرات" class="input-btn">
+            <input id="submit-button" type="submit" class="float-right" value="اعمال تغییرات" class="input-btn">
         </div>
     </div>
 </form>
@@ -37,3 +41,18 @@
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/setting.css' %}" type='text/css'>
 {% endblock %}
+
+
+{% block js %}
+<script>
+
+    if (disableSubmit === true) {
+        const submitButton = document.getElementById("submit-button");
+        const containerDataTitle = document.getElementById("container-data-title");
+        submitButton.remove()
+        containerDataTitle.remove()
+    }
+
+</script>
+
+{% endblock js %}
